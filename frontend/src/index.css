@@ -1,0 +1,431 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ============================================
+     CROP PLATFORM — PREMIUM EARTHEN DESIGN SYSTEM
+     ============================================ */
+
+  /* Typography */
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* ============================================
+     CORE COLORS
+     ============================================ */
+
+  --background: #e9e4d8;
+  --foreground: #1e1e1e;
+
+  --card: #f4efe4;
+  --card-foreground: #1e1e1e;
+
+  --popover: #f4efe4;
+  --popover-foreground: #1e1e1e;
+
+  --primary: #1d9f76;
+  --primary-foreground: #ffffff;
+
+  --secondary: #0f7058;
+  --secondary-foreground: #ffffff;
+
+  --accent: #efa02a;
+  --accent-foreground: #2e2e2e;
+
+  --muted: #cfc8b8;
+  --muted-foreground: #5e5a52;
+
+  --border: #d2cbbb;
+  --input: #d2cbbb;
+  --ring: #2e2e2e;
+
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  /* ============================================
+     SIDEBAR
+     ============================================ */
+
+  --sidebar: #e3ddcf;
+  --sidebar-foreground: #1e1e1e;
+
+  --sidebar-primary: #2e2e2e;
+  --sidebar-primary-foreground: #e6e4d7;
+
+  --sidebar-accent: #e6e4d7;
+  --sidebar-accent-foreground: #2e2e2e;
+
+  --sidebar-border: #d2cbbb;
+  --sidebar-ring: #2e2e2e;
+
+  /* ============================================
+     CHART COLORS
+     ============================================ */
+
+  --chart-1: #f26a4b;
+  --chart-2: #1e1e1e;
+  --chart-3: #5e5a52;
+  --chart-4: #a89f8f;
+  --chart-5: #cfc8b8;
+
+  /* ============================================
+     SYSTEM
+     ============================================ */
+
+  --radius: 0.5rem;
+  --spacing: 0.25rem;
+
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-serif: "Playfair Display", serif;
+
+  --letter-spacing: 0.01em;
+
+  --shadow-color: #000000;
+  --shadow-opacity: 0.1;
+  --shadow-blur: 10px;
+  --shadow-spread: 0px;
+  --shadow-offset-x: 0px;
+  --shadow-offset-y: 4px;
+}
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+
+.dark {
+  color-scheme: dark;
+
+  --background: #1b1d1c;
+  --foreground: #e8e3da;
+
+  --card: #222523;
+  --card-foreground: #e8e3da;
+
+  --popover: #1c1c1c;
+  --popover-foreground: #e8e3da;
+
+  --primary: #1d9f76;
+  --primary-foreground: #ffffff;
+
+  --secondary: #0f7058;
+  --secondary-foreground: #d1cfc0;
+
+  --accent: #efa02a;
+  --accent-foreground: #2e2e2e;
+
+  --muted: #2a2a2a;
+  --muted-foreground: #8e8a83;
+
+  --border: #2c2c2c;
+  --input: #2c2c2c;
+  --ring: #d1cfc0;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  /* Sidebar */
+  --sidebar: #101010;
+  --sidebar-foreground: #e8e3da;
+
+  --sidebar-primary: #d1cfc0;
+  --sidebar-primary-foreground: #363636;
+
+  --sidebar-accent: #363636;
+  --sidebar-accent-foreground: #d1cfc0;
+
+  --sidebar-border: #2c2c2c;
+  --sidebar-ring: #d1cfc0;
+
+  /* Charts */
+  --chart-1: #f26a4b;
+  --chart-2: #d9cfc2;
+  --chart-3: #8e8a83;
+  --chart-4: #5c5a56;
+  --chart-5: #3b3b3b;
+
+  /* Shadows */
+  --shadow-opacity: 0.3;
+  --shadow-blur: 15px;
+  --shadow-offset-y: 6px;
+}
+
+/* ============================================
+   TAILWIND THEME TOKENS
+   ============================================ */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+
+  --radius: var(--radius);
+}
+
+/* ============================================
+   BASE
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--background);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background-color: var(--background);
+  color: var(--foreground);
+
+  font-family: var(--font-sans);
+  letter-spacing: var(--letter-spacing);
+
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--foreground);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-weight: 650;
+}
+
+h2,
+h3 {
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ============================================
+   FOCUS
+   ============================================ */
+
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* ============================================
+   SELECTION
+   ============================================ */
+
+::selection {
+  background: rgba(29, 159, 118, 0.18);
+  color: var(--foreground);
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted) transparent;
+}
+
+/* ============================================
+   LEAFLET
+   ============================================ */
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-sans);
+  background: var(--muted);
+}
+
+.agrecrop-map-popup {
+  background: var(--card);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  min-width: 220px;
+}
+
+.agrecrop-map-popup button {
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  background: var(--muted);
+  color: var(--foreground);
+  border-radius: 5px;
+  padding: 6px 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--card);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.leaflet-popup-tip {
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+/* ============================================
+   UTILITY LAYER
+   ============================================ */
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   RESPONSIVE BASE
+   ============================================ */
+
+@media (max-width: 640px) {
+  body {
+    font-size: 15px;
+  }
+}

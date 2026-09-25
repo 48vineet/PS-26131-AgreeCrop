@@ -1,0 +1,122 @@
+{
+  "recordingTimestamp": "2026-09-19T12:43:08.168Z",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "acts": {
+    "act0": {
+      "route": "/login",
+      "accountRole": null,
+      "notes": "Opening shot recorded from the real login page. No external footage or fabricated statistics were composited in-browser; only verified on-screen product copy (capabilities list, disease-class/crop/role counts already present in Login.jsx) is shown."
+    },
+    "act1": {
+      "route": "/farmer/screening",
+      "accountRole": "farmer",
+      "farmId": 2224,
+      "farmName": "Shindkheda Farm",
+      "cropId": null,
+      "cropName": null,
+      "demoImage": {
+        "path": "demo-assets\\late_blight_demo.jpg",
+        "overridden": true
+      },
+      "prediction": {
+        "disease": "Potato___Early_blight",
+        "confidence": 96.51,
+        "confidence_warning": false,
+        "top_predictions": [
+          {
+            "disease": "Potato___Early_blight",
+            "confidence": 96.51
+          },
+          {
+            "disease": "Tomato___Early_blight",
+            "confidence": 1.44
+          },
+          {
+            "disease": "Potato___Late_blight",
+            "confidence": 1.14
+          }
+        ]
+      }
+    },
+    "act2": {
+      "route": "/farmer/monitoring",
+      "accountRole": "farmer",
+      "advisoryShown": true,
+      "monitoringOutcome": "rendered",
+      "notes": "Screening photos are not persisted on this deployment (no Supabase storage credentials configured in backend/.env) — the capture does not claim otherwise."
+    },
+    "act3": {
+      "routes": [
+        "/extension/dashboard",
+        "/extension/map",
+        "/extension/farmers/2224"
+      ],
+      "accountRole": "extension_officer",
+      "farmerCount": 1,
+      "farmCount": 1,
+      "mappedFarmCount": 1,
+      "selectedHighRiskFarm": {
+        "farmId": 2224,
+        "farmerName": "farmer@email.com",
+        "riskLevel": null
+      },
+      "heatmapHasRealCoordinates": true,
+      "geoObservationsFeatureCount": null
+    },
+    "act4": {
+      "route": "/extension/validation",
+      "accountRole": "extension_officer",
+      "observationId": 13174,
+      "predictedClass": "Potato___Early_blight",
+      "confidence": 96.51,
+      "submitted": true,
+      "nativeDialogsHandled": []
+    },
+    "act5": {
+      "routes": [
+        "/official/analytics",
+        "/official/map",
+        "/official/dashboard"
+      ],
+      "accountRole": "official",
+      "counts": {
+        "farms": 1,
+        "observations": 7,
+        "image_screenings": 7,
+        "pest_observations": 0,
+        "high_risk_cases": 0,
+        "pending_validations": 0,
+        "open_referrals": 0,
+        "follow_up_workload": 0
+      },
+      "riskLevels": {},
+      "diseaseTrendCount": 2,
+      "pestTrendCount": 0,
+      "cropStatisticsCount": 0
+    }
+  },
+  "screenshots": [
+    "screenshots/act1-screening.png",
+    "screenshots/act2-advisory.png",
+    "screenshots/act3-extension-map.png",
+    "screenshots/act3-farm-detail.png",
+    "screenshots/act4-validation.png",
+    "screenshots/act5-analytics.png"
+  ],
+  "warnings": [],
+  "limitations": [
+    "POST /predict returns a real top_predictions array (captured above), but the deployed DiseaseResultPanel/DiseaseScreening UI only visually renders the top-1 disease and confidence — no top-3 list is shown on screen. The capture intentionally does not overlay a fabricated top-3 UI element; the richer data is preserved here instead, truthfully, as backing metadata only.",
+    "This deployment does not persist screening photographs (image_store.py is inert without SUPABASE_URL/SUPABASE_SERVICE_ROLE_KEY).",
+    "The Extension Officer role is correctly named as such throughout this capture and its metadata. The application's own UI copy still labels this screen \"Expert Validation\" (en.json validation.title) — that existing UI text was not modified, per the no-app-changes constraint.",
+    "/official/dashboard's risk-level bars render as binary 0%/100% and do not proportionally represent magnitude, so /official/analytics was used for the primary risk-distribution shot instead, per spec."
+  ],
+  "skipped": [],
+  "status": "COMPLETE",
+  "durationSeconds": 160,
+  "chapterMarkerImplementation": "The installed Playwright version (1.63.0) exposes no public API for embedding real video-chapter/container metadata. Chapter markers were implemented as a subtle in-page DOM overlay shown/hidden via page.evaluate() during capture, not as real container-level chapters.",
+  "videoPath": "raw\\agrecrop-demo.webm",
+  "disclaimer": "This is the clean master screen recording only — not final cinematic footage. It is intended to be edited further with voiceover, music, title cards, and external agricultural B-roll."
+}
